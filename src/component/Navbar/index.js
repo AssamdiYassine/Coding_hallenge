@@ -17,7 +17,7 @@ function classNames(...classes) {
 
 function index() {
   return (
-    <Disclosure as="nav" style={{backgroundColor:'#F9FAFC'}}>
+    <Disclosure as="nav" style={{backgroundColor:'#F9FAFC'}}  className="sticky top-0">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8 	" >
