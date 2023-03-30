@@ -7,6 +7,7 @@ import Applied from './dashboard/sections/candidates/Applied'
 import Disqualified from './dashboard/sections/candidates/Disqualified'
 import Offer from './dashboard/sections/candidates/Offer'
 import Phone from './dashboard/sections/candidates/Phone'
+ 
 
 import Jobs from './Jobs'
 import Company from './Company'
@@ -18,9 +19,10 @@ function index() {
      
       <Routes>
     
-        <Route path="/" element={ <Layout><Dashboard /></Layout>}>
-        
-        <Route path="Interview" element={  <Interview />}/>
+        <Route path="/" exact={true} element={ <Layout><Dashboard /></Layout>}>
+         
+
+        <Route path="Interview" element={  <Interview />} exact={true}/>
         <Route path="Applied" element={  <Applied />}/>
         <Route path="Phone" element={  <Phone />}/>
         <Route path="Offer" element={  <Offer />}/>

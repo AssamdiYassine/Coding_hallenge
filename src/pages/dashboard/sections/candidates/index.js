@@ -1,8 +1,9 @@
-import React from "react";
+import React , { useEffect}from "react";
 import { Link,Outlet } from "react-router-dom";
 import people from '../candidates/Interview/people.json'
-
+ 
 import { useLocation as UseLocation } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 
 function classNames(...classes) {
@@ -10,7 +11,7 @@ function classNames(...classes) {
 }
 function Candidates() {
   let location = UseLocation();
-
+ 
 
   const navigation = [
     { name: "Applied", href: "/Applied", current: 0 },
@@ -23,6 +24,8 @@ function Candidates() {
 
   return (
     <>
+ 
+
       <div className="bg-white px-10 ">
         <div className="mt-9 mb-7 ml-2">
         <h1 className="text-xl" >Candidates</h1>
