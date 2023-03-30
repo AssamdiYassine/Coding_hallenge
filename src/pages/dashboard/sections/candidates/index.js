@@ -39,12 +39,12 @@ function Candidates() {
                 key={item.name}
                 href={item.href}
                 className={classNames(
-                  location.pathname === item.href
+                  location.pathname === item.href 
                     ? "text-violet-700   border-b-[1.5px] border-violet-700 "
                     : "  text-slate-500 hover:bg-violet-700 hover:text-white rounded-md",
                   " px-3 py-2 text-sm font-medium"
                 )}
-                aria-current={item.current ? "/" : undefined}
+                aria-current={item.active ? "/Interview" : undefined}
               >
                 <div className="p-1 flex ">
                   <div  className="pr-4 ">
@@ -56,7 +56,7 @@ function Candidates() {
                    
                     className={classNames(
     
-                     location.pathname === item.href
+                     location.pathname === item.href  
                        ? "text-violet-700 text-dark  bg-violet-100 border-b-[2px]  "
                        : "text-dark   bg-slate-100    rounded-md"
                   ,

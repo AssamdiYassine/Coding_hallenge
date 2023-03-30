@@ -18,11 +18,10 @@ function index() {
     <Router>
      
       <Routes>
-    
+      
         <Route path="/" exact={true} element={ <Layout><Dashboard /></Layout>}>
-         
 
-        <Route path="Interview" element={  <Interview />} exact={true}/>
+        <Route path="Interview" element={  <Interview />}  />
         <Route path="Applied" element={  <Applied />}/>
         <Route path="Phone" element={  <Phone />}/>
         <Route path="Offer" element={  <Offer />}/>
@@ -36,8 +35,7 @@ function index() {
     
     </Router>
     
-    {/* <RouterProvider router={router} /> */}
-      
+       
      
     </>
   );
