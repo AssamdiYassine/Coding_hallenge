@@ -3,21 +3,24 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import {  Link } from "react-router-dom";
+import { useLocation as UseLocation } from "react-router-dom";
 
 
 const navigation = [
   { name: "Dashboard", href: "/", current: true },
-  { name: "Jobs", href: "#", current: false },
-  { name: "Applicants", href: "#", current: false },
-  { name: "Companv", href: "#", current: false },
+  { name: "Jobs", href: "/Jobs", current: false },
+  { name: "Applicants", href: "/Applicants", current: false },
+  { name: "Company", href: "/Company", current: false },
 ];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 function index() {
+  let location = UseLocation();
+
   return (
-    <Disclosure as="nav" style={{backgroundColor:'#F9FAFC'}}  className="sticky top-0">
+    <Disclosure as="nav" style={{backgroundColor:'#F9FAFC'}} className="sticky top-0">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-9xl px-2 sm:px-6 lg:px-8 	" >
@@ -51,8 +54,9 @@ function index() {
                     {navigation.map((item) => (
                          <Link to={item.href}
                          key={item.name}
+                         href={item.href}
                          className={classNames(
-                            item.current
+                          location.pathname === item.href
                               ? "bg-gray-100 text-dark"
                               : "text-dark hover:bg-gray-700 hover:text-white",
                             "rounded-md px-3 py-2 text-sm font-medium"

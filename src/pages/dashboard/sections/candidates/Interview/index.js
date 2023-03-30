@@ -1,41 +1,15 @@
 import React from 'react'
 import people from './people.json'
+import ReactPaginate from 'react-paginate'
 function index() {
-    // const people = [
-    //     {
-    //       name: "Jane Cooper",
-    //       title: "Regional Paradigm Technician",
-    //       department: "Optimization",
-    //       role: "Admin",
-    //       email: "jane.cooper@example.com",
-    //       image: "https://bit.ly/33HnjK0",
-    //     },
-    //     {
-    //       name: "John Doe",
-    //       title: "Regional Paradigm Technician",
-    //       department: "Optimization",
-    //       role: "Tester",
-    //       email: "john.doe@example.com",
-    //       image: "https://bit.ly/3I9nL2D",
-    //     },
-    //     {
-    //       name: "Veronica Lodge",
-    //       title: "Regional Paradigm Technician",
-    //       department: "Optimization",
-    //       role: " Software Engineer",
-    //       email: "veronica.lodge@example.com",
-    //       image: "https://bit.ly/3vaOTe1",
-    //     },
-    //     // More people...
-    //   ];
-    
+ 
   return (
     <div className="bg-white px-10 ">
     
       <div className="flex flex-col">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div className="shadow overflow-hidden  sm:rounded-lg">
+            <div className="  border-b-[1px] overflow-hidden  sm:rounded-lg">
               <table className="min-w-full divide-y divide-gray-200">
                 <tbody className="bg-white divide-y ">
                   {people.map((person) => (
@@ -115,7 +89,54 @@ function index() {
                   ))}
                 </tbody>
               </table>
+            
+
             </div>
+            <div className='flex justify-between align-middle '>
+            <button
+                  type="button"
+                  className="rounded-full text-gray-700 flex p-6 "
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+</svg>
+
+
+                  
+Previous
+                   
+                 </button>
+           
+            <ReactPaginate
+                previousLabel={""}
+                nextLabel={""}
+                breakLabel={"..."}
+                pageCount={5}
+                marginPagesDisplayed={2}
+                pageLimit={1}
+                totalRecords={1}
+                onPageChange={2}
+                containerClassName={"pagination flex   text-gray-700  "}
+                pageClassName={"page-item  p-6   "}
+                pageLinkClassName={"page-link  "}
+                previousClassName={"page-item "}
+                previousLinkClassName={"page-link "}
+                nextClassName={"page-item"}
+                nextLinkClassName={"page-link"}
+                breakClassName={"page-item"}
+                breakLinkClassName={"page-link"}
+                activeClassName={"active text-violet-700   border-t-[1.5px] border-violet-700   "}
+              />
+                 <button
+                  type="button"
+                  className="rounded-full  text-gray-700 flex p-6 "
+                >Next
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+</svg>
+
+                 </button>
+               </div>
           </div>
         </div>
       </div>
