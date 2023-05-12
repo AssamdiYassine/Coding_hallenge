@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.glass{
+  background: rgba(255, 255, 255, 0.31);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.3px);
+  -webkit-backdrop-filter: blur(13.3px);
+}
+
+
+
+.login{
+  
+     
+    padding: 0 10px !important;
+    border-radius: 12px !important;
+     font-size: 18px !important;
+  
+}
